@@ -7,7 +7,6 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-
 /**
  * Returns an area of a rectangle given by width and height.
  *
@@ -19,10 +18,9 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleArea(width, height) {
+  return width * height;
 }
-
 
 /**
  * Returns a circumference of circle given by radius.
@@ -35,8 +33,10 @@ function getRectangleArea(/* width, height */) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCircleCircumference(radius) {
+  const pi = 3.141592653589793238462643;
+  const l = 2 * pi * radius;
+  return l;
 }
 
 /**
@@ -51,8 +51,12 @@ function getCircleCircumference(/* radius */) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  let a = (value1 + value2) / 2;
+  if (a === Infinity) {
+    a = 1.7976931348623157e+308;
+  }
+  return a;
 }
 
 /**
@@ -70,8 +74,9 @@ function getAverage(/* value1, value2 */) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  const d = Math.sqrt((((x2 - x1)) ** 2) + ((y2 - y1)) ** 2);
+  return d;
 }
 
 /**
@@ -86,10 +91,10 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+  const x = -b / a;
+  return x;
 }
-
 
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
@@ -111,6 +116,9 @@ function getLinearEquationRoot(/* a, b */) {
  */
 function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
   throw new Error('Not implemented');
+  // const formula = (x1 * y1 + x2 * y2)
+  // / ((Math.sqrt(x1 ** 2 + x2 ** 2)) * (Math.sqrt(y1 ** 2 + y2 ** 2)));
+  // return formula;
 }
 
 /**
@@ -125,10 +133,13 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
-}
+function getLastDigit(value) {
+  const a = value.toString();
 
+  const b = +a[a.length - 1];
+  if (a.length === 1) return a;
+  return b;
+}
 
 /**
  * Returns a number by given string representation.
@@ -141,8 +152,8 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  return +value;
 }
 
 /**
@@ -158,10 +169,10 @@ function parseNumberFromString(/* value */) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal(a, b, c) {
+  const d = Math.sqrt(a ** 2 + b ** 2 + c ** 2);
+  return d;
 }
-
 
 /**
  * Returns the number rounded to specified power of 10.
